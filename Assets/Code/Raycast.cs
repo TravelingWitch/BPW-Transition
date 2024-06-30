@@ -14,8 +14,7 @@ public class Raycast : MonoBehaviour
 
     private void Update()
     {
-        volume01.enabled = false; 
-
+         
         if (Physics.Raycast(transform.position, transform.forward, out var hit, Mathf.Infinity, mask))
         {
             var obj = hit.collider.gameObject;
@@ -29,6 +28,11 @@ public class Raycast : MonoBehaviour
         {
             AnimationEvent();
         }
+    }
+
+    private void Start()
+    {
+        volume01.enabled = false;
     }
     void AnimationEvent()
     {
